@@ -28,13 +28,27 @@ TBA
 
 ## Building
 
-TBA
+```bash
+dotnet build -c Release .\osu.Game.Rulesets.Typing\
+```
+
+Or, grab the latest [release](https://github.com/DarkStoorM/osu-typing/releases).
+
+> [!Note]
+> Downloading a release with different version than your current osu! will not load the ruleset.
 
 ---
 
 ## Loading Into osu
 
-TBA
+- Launch osu!
+- ctrl/cmd + o (settings)
+- Type: `folder`
+- Click `Open osu! folder`
+- Drop the `.dll` into `rulesets` folder
+- Restart osu!
+
+![alt](https://github.com/user-attachments/assets/098d69f6-52db-4f7a-a61a-15f9e8c38b0a)
 
 ---
 
