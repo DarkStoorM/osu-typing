@@ -54,4 +54,4 @@ Or, grab the latest [release](https://github.com/DarkStoorM/osu-typing/releases)
 
 ## Full Ruleset Description
 
-TBA
+The *actual*, full description of what even is this can be found in the [ABOUT](ABOUT.md) document.
