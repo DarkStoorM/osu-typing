@@ -1,6 +1,6 @@
 # Game Samples
 
-Just leaving a notice here since some of the samples may come from the Resources repository, which has a different licencing.
+Just leaving a notice here since some of the samples may come from the Resources repository, which has a different licensing.
 
 ## key-caps.wav
 

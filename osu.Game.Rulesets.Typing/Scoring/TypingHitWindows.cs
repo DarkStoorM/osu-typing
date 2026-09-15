@@ -32,19 +32,19 @@ namespace osu.Game.Rulesets.Typing.Scoring
         private double miss;
 
         private double overallDifficulty;
-        private double speedMultiplier = 1;
 
         /// <summary>
         /// Multiplier applied to all HitWindows to retain a somewhat constant window no matter the rate change.
         /// </summary>
         public double SpeedMultiplier
         {
+            get;
             set
             {
-                speedMultiplier = value;
+                field = value;
                 updateWindows();
             }
-        }
+        } = 1;
 
         public override bool IsHitResultAllowed(HitResult result)
         {
@@ -97,12 +97,12 @@ namespace osu.Game.Rulesets.Typing.Scoring
 
         private void updateWindows()
         {
-            perfect = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, PERFECT_WINDOW_RANGE) * speedMultiplier) + 0.5;
-            great = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, GREAT_WINDOW_RANGE) * speedMultiplier) + 0.5;
-            good = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, GOOD_WINDOW_RANGE) * speedMultiplier) + 0.5;
-            ok = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, OK_WINDOW_RANGE) * speedMultiplier) + 0.5;
-            meh = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, MEH_WINDOW_RANGE) * speedMultiplier) + 0.5;
-            miss = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, MISS_WINDOW_RANGE) * speedMultiplier) + 0.5;
+            perfect = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, PERFECT_WINDOW_RANGE) * SpeedMultiplier) + 0.5;
+            great = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, GREAT_WINDOW_RANGE) * SpeedMultiplier) + 0.5;
+            good = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, GOOD_WINDOW_RANGE) * SpeedMultiplier) + 0.5;
+            ok = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, OK_WINDOW_RANGE) * SpeedMultiplier) + 0.5;
+            meh = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, MEH_WINDOW_RANGE) * SpeedMultiplier) + 0.5;
+            miss = Math.Floor(IBeatmapDifficultyInfo.DifficultyRange(overallDifficulty, MISS_WINDOW_RANGE) * SpeedMultiplier) + 0.5;
         }
     }
 }

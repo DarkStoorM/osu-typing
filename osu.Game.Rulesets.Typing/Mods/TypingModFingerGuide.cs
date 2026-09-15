@@ -16,11 +16,6 @@ namespace osu.Game.Rulesets.Typing.Mods
         public override string Name => "Finger Guide";
         public override ModType Type => ModType.Fun;
 
-        public void ApplyToDrawableHitObject(DrawableHitObject drawable)
-        {
-            DrawableTypingHitObject drawableHit = (DrawableTypingHitObject)drawable;
-
-            drawableHit.OverrideKeyColour = true;
-        }
+        public void ApplyToDrawableHitObject(DrawableHitObject drawable) => ((DrawableTypingHitObject)drawable).OverrideKeyColour = true;
     }
 }
