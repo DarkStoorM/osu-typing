@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using osu.Game.Audio;
 using osu.Game.Beatmaps;
@@ -14,7 +15,7 @@ namespace osu.Game.Rulesets.Typing.Beatmaps
 {
     public class TypingBeatmapConverter : BeatmapConverter<TypingHitObject>
     {
-        private readonly TypingAction[] allActions = Enum.GetValues<TypingAction>();
+        private readonly TypingAction[] allActions = Enum.GetValues<TypingAction>().Except([TypingAction.Space]).ToArray();
 
         /// <summary>
         /// Used for deterministic beatmap conversion. It's required to not break replays in the default no-mod gameplay.
