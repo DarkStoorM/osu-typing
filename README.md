@@ -20,7 +20,11 @@
 
 ## Overview
 
-TBA
+To make this **really short**, in this ruleset, you type random words to "approximately constant" WPM, based on the selected song's BPM.
+
+_BPM_ dictates the difficulty, not the beatmap itself as its contents are replaced.
+
+_**Please**_ refer to [this TL;DR](ABOUT.md#a-tldr-on-how-to-play-this) on how to use it in-game.
 
 ---
 
@@ -52,7 +56,7 @@ Or, grab the latest [release](https://github.com/DarkStoorM/osu-typing/releases)
 
 ## Full Ruleset Description
 
-The *actual*, full description of what even is this can be found in the [ABOUT](ABOUT.md) document.
+The _actual_, full description of what even is this can be found in the [ABOUT](ABOUT.md) document.
 
 > [!Warning]
 > The above is an extremely long document, meant to explain almost everything in detail and to show some reasoning behind the features.
