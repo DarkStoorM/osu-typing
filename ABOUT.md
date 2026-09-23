@@ -67,7 +67,7 @@ This ruleset is primarily made for `Words` mod, where you type random words from
 - Select `Words` Mod
 - Customise the `Words` Mod mostly by adjusting the `Letter Spacing`:
   - `Narrow`(\*) - letters land on `1/4`, used for lower BPMs to make the game "play faster" without changing the song rate (100 BPM evaluates to around 80 WPM, 150 BPM -> 120 BPM etc.)
-  - `Default` - default, letters land on `1/2`, used for 200~ BPM (~80WPM) or 100~ BPM (40 WPM)
+  - `Default` - default, letters land on `1/2`, used for 200\~ BPM (\~80WPM) or 100\~ BPM (40 WPM)
   - `Wide` - letters land on `1/1`. Not really used, maybe for starter WPMs around 40-60 (if songs were mapped to 200-300 BPM)
 - Probably add `Constant Speed` if there are any `Scroll Speed` changes (I come from osu!taiko and I hate SV changes)
 - Mod Selection shows the approximate `WPM` based on the most common BPM next to `Difficulty Attributes`
@@ -203,8 +203,8 @@ The full dictionary contained 5000 words, but due to some changes, I only left o
 > Information about `Curated` dictionary only applies to QWERTY. I only left words that were somewhat mechanically nice to type for muscle memory grinding (for me at least, since I type on `split ortholinear QWERTY`).
 
 - `Basic` - 250 words
-- `Advanced` - ~1250 words without second curation pass
-- `Extended` - ~2500
+- `Advanced` - \~1250 words without second curation pass
+- `Extended` - \~2500
 
 ---
 
@@ -220,10 +220,10 @@ And another, important note: the new curated dictionary is quite overwhelmed wit
 
 Approximate breakdown for word lengths:
 
-- `3` ~ 150
-- `5` ~ 350
-- `7` ~ 275
-- `9` ~ 45
+- `3` \~ 150
+- `5` \~ 350
+- `7` \~ 275
+- `9` \~ 45
 - `11` 8
 
 In my defense, the new words that were added, were scored in a way that every letter lands on different hand, having at most one letter on the same hand. This only applies to the second part of the dictionary, as the first half is just the standard word frequency list (mostly). Some exceptions were made, e.g. natural rolls, like the word: `serpent`:
@@ -343,8 +343,8 @@ E.g. if a song is 260 BPM and default settings are used (like playing 130 BPM), 
 > [!Note]
 > For example, 120 WPM can be set through the following
 >
-> - 150 BPM + `Narrow Letter Spacing` (on 1/4): `150 BPM / 1.25` or `150 BPM * 0.8` ~ 120 WPM
-> - 300 BPM + `Default Letter Spacing` (on 1/2): `300 BPM / 2.5` or `300 BPM * 0.4` ~120 WPM
+> - 150 BPM + `Narrow Letter Spacing` (on 1/4): `150 BPM / 1.25` or `150 BPM * 0.8` \~120 WPM
+> - 300 BPM + `Default Letter Spacing` (on 1/2): `300 BPM / 2.5` or `300 BPM * 0.4` \~120 WPM
 > - 240 BPM + DT -> 300 BPM + `Default Letter Spacing`
 
 I'm not really covering the `Wide Letter Spacing` (`5` divisor or `0.2` BPM multiplier), because it's meant for lower WPM, which I'm not really interested in.
@@ -638,7 +638,7 @@ The current colour spectrum for keys don't include Blue, I just started from Gre
 
 Conveniently, the mid point where the player should consider the UR to be bad is where the text colour changes from black to yellow, which is at `160` Unstable Rate. After that, the keys become darker, meaning that the play was either offset or just bad and needs improvement.
 
-When the text colour is black, you aim for improvement from pink to orange, which is a jump from ~`150` to `120` UR. Then it's a pure grind to yellow.
+When the text colour is black, you aim for improvement from pink to orange, which is a jump from \~`150` to `120` UR. Then it's a pure grind to yellow.
 
 ## Skinnable Key Timing Distribution
 
