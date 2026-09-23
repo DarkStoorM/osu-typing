@@ -35,7 +35,7 @@ dotnet build -c Release .\osu.Game.Rulesets.Typing\
 Or, grab the latest [release](https://github.com/DarkStoorM/osu-typing/releases).
 
 > [!Note]
-> Downloading a release with different version than your current osu! will not load the ruleset.
+> Downloading a release with different version than your current osu! might not load the ruleset **if** there was an update to the internal Ruleset Version on lazer
 
 ---
 
@@ -45,7 +45,7 @@ Or, grab the latest [release](https://github.com/DarkStoorM/osu-typing/releases)
 - ctrl/cmd + o (settings)
 - Type: `folder`
 - Click `Open osu! folder`
-- Drop the `.dll` into `rulesets` folder
+- Drop the `osu.Game.Rulesets.Typing.dll` into `rulesets` folder
 - Restart osu!
 
 ![alt](https://github.com/user-attachments/assets/098d69f6-52db-4f7a-a61a-15f9e8c38b0a)
