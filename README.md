@@ -6,6 +6,7 @@
   - [Building](#building)
   - [Loading Into osu](#loading-into-osu)
   - [Full Ruleset Description](#full-ruleset-description)
+  - [Project Status](#project-status)
 
 ---
 
@@ -60,3 +61,13 @@ The _actual_, full description of what even is this can be found in the [ABOUT](
 
 > [!Warning]
 > The above is an extremely long document, meant to explain almost everything in detail and to show some reasoning behind the features.
+
+## Project Status
+
+**This project is Feature-frozen / maintenance-only.**
+
+I consider this ruleset complete for its intended purpose and will not be  actively developed. Pull requests and feature requests are not accepted. Compatibility updates for newer osu!lazer versions will be added when necessary.
+
+Feel free to fork the project if you'd like to continue development
+
+For more information, please refer to the [CONTRIBUTING](CONTRIBUTING.md) document.
