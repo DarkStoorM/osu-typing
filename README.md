@@ -1,7 +1,5 @@
 # osu!typing
 
-This is a temporary README until everything is in place.
-
 - [osu!typing](#osutyping)
   - [Licensing](#licensing)
   - [Overview](#overview)
