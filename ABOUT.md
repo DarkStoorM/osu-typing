@@ -61,7 +61,7 @@ I got pretty much bored of MonkeyType, and since I had it configured to the `scr
 
 I know people absolutely **hate** reading, so I'm keeping this section at the top. If this is too confusing because of how many things are in the mod customisation, well, too bad, sorry.
 
-This ruleset is primarily made for `Words` mod, where you type random words from the selected dictionaries, the beatmap contents are **replaced**, no structure is preserved, as intended. This is the same concept as `TaikoModFullRandom`. I am fully aware of the fact that those beatmaps make zero sense structurally.
+This ruleset is primarily made for `Words` mod, where you type random words from the selected dictionaries, the beatmap contents are **replaced**, no structure is preserved, as intended. I am fully aware of the fact that those beatmaps make zero sense structurally.
 
 - Go to Mod Selection
 - Select `Words` Mod
