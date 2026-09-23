@@ -53,3 +53,6 @@ Or, grab the latest [release](https://github.com/DarkStoorM/osu-typing/releases)
 ## Full Ruleset Description
 
 The *actual*, full description of what even is this can be found in the [ABOUT](ABOUT.md) document.
+
+> [!Warning]
+> The above is an extremely long document, meant to explain almost everything in detail and to show some reasoning behind the features.
