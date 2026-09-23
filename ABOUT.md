@@ -4,9 +4,6 @@
 
 For the lack of a better name of course.
 
-> [!Note]
-> Currently, waiting for ~~`.NET 10.0` upgrade and~~ `ppy.osu.Game` package update.
-
 TL;DR
 
 This is not a technical README, but more of a thing that kind of reads like a blog post, so, a heads-up, if you hate reading, close this document. Also, this is not some AI auto-generated crap.
