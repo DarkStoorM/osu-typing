@@ -669,4 +669,9 @@ I still don't know how to use osu! Realm, so it will eventually break.
 
 ## Stuff to "Eventually" Do
 
+Since I'm not really planning on maintaining this, this is a list of things I _might_ add/fix in the future, but I most likely won't.
+
 - Remove `DifficultyCalculator`, because it doesn't even measure anything, or at least replace it with something super simple
+- Result screen
+  - Add a list of words where you missed and where - `HitEvent` exposes `HitObject`, which can be cast to `TypingHitObject` to use `IndexInWord` to locate the miss. There is currently no implementation of the `Word` the given object belongs to
+  - Add a list of words with worst "performance"
