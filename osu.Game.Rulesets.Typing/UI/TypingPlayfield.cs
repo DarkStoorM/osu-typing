@@ -30,6 +30,13 @@ namespace osu.Game.Rulesets.Typing.UI
         [BackgroundDependencyLoader]
         private void load()
         {
+            RelativePositionAxes = Axes.Y;
+
+            // It might be a dumb decision to offset the playfield by 10% up just because an optional skin component is
+            // not scalable for time being. This was made only to fit the KeyTimingDistribution on some UI scaling
+            // customisations, but obviously, that is not a real solution
+            Y = -0.1f;
+
             AddRangeInternal(new Drawable[]
                 {
                     new LaneContainer
