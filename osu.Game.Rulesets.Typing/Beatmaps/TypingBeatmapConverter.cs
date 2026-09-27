@@ -23,17 +23,7 @@ namespace osu.Game.Rulesets.Typing.Beatmaps
         private readonly Random beatmapSeededRng;
 
         public TypingBeatmapConverter(IBeatmap beatmap, Ruleset ruleset)
-            : base(beatmap, ruleset)
-        {
-            byte[] hash = System.Convert.FromHexString(Beatmap.BeatmapInfo.MD5Hash);
-            int seed = 0;
-
-            // "Combine" the bytes I guess? Probably doesn't do much anyway
-            for (int i = 0; i < hash.Length; i += 4)
-                seed ^= BitConverter.ToInt32(hash, i);
-
-            beatmapSeededRng = new Random(seed);
-        }
+            : base(beatmap, ruleset) => beatmapSeededRng = new Random(GenerateSeedFromBeatmap(beatmap));
 
         public override bool CanConvert() => true;
 
@@ -58,6 +48,18 @@ namespace osu.Game.Rulesets.Typing.Beatmaps
                 StartTime = startTime,
                 Letter = allActions[beatmapSeededRng.Next(allActions.Length)],
             };
+        }
+
+        public static int GenerateSeedFromBeatmap(IBeatmap beatmap)
+        {
+            byte[] hash = System.Convert.FromHexString(beatmap.BeatmapInfo.MD5Hash);
+            int seed = 0;
+
+            // "Combine" the bytes I guess? Probably doesn't do much anyway
+            for (int i = 0; i < hash.Length; i += 4)
+                seed ^= BitConverter.ToInt32(hash, i);
+
+            return seed;
         }
     }
 }
