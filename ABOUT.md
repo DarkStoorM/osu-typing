@@ -463,7 +463,13 @@ This makes _everything_ deterministic. Custom seed should only be used if you in
 
 It results in the same exact Star Rating across all beatmaps with the same properties, especially in a beatmapset, e.g. if all difficulties in a beatmap have the same drain time and no BPM changes, the Star Rating will be the same.
 
-It would seem like there is no point in using the seed, because ultimately the only difference would be how individual songs feel.
+It would seem like there is no point in using the seed, because ultimately, the only difference would be how individual songs feel.
+
+There is an important note, though, but first, this is how seed customisation works:
+
+- **The default value `0`**: you don't have to touch it. Each difficulty will have its own seed that is calculated from beatmap hash. This change was not really necessary, but it can somewhat be seen as having a random and fixed seed at the same time in case you want to retry the same seed without having to explicitly set it in the mod customisation
+- **Leaving the Seed empty**: if you want a random seed on every session and if you don't mind playing a different seed on each retry
+- **Explicitly setting the seed**: probably the least used setting, but you can set any number you like to lock the different generation seed
 
 ---
 
