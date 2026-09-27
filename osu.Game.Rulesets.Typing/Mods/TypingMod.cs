@@ -11,8 +11,8 @@ namespace osu.Game.Rulesets.Typing.Mods
 {
     public abstract class TypingMod : Mod, IHasSeed
     {
-        [SettingSource("Word Seed", SettingControlType = typeof(SettingsNumberBox))]
-        public Bindable<int?> Seed { get; } = new Bindable<int?>();
+        [SettingSource("Word Seed", "Leaving this empty will generate a random seed for each session. \"0\" uses a unique seed for each beatmap.", SettingControlType = typeof(SettingsNumberBox))]
+        public Bindable<int?> Seed { get; } = new Bindable<int?>(0);
 
         protected Random WordsRNG = null!;
 

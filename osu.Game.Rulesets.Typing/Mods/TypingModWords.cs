@@ -327,8 +327,20 @@ namespace osu.Game.Rulesets.Typing.Mods
 
         private void initialiseSettings()
         {
+            // Not really sure what should be the intended default, but for now, it will be a fixed seed based on
+            // the beatmap, so the seed will always be the same across sessions, but different across difficulties.
+            // This will require explicitly leaving the seed empty for a random seed on each session. It might
+            // sound counterintuitive, since it would be expected to have an empty box for random seed, but I just
+            // didn't have any other solutions in mind at this point
+            int seed = Seed.Value switch
+            {
+                null => RNG.Next(),
+                0 => TypingBeatmapConverter.GenerateSeedFromBeatmap(typingBeatmap),
+                _ => (int)Seed.Value
+            };
+
             wordGenerator = TypingRuleset.WordDictionaries[DictionarySize.Value];
-            WordsRNG = new Random(Seed.Value ??= RNG.Next());
+            WordsRNG = new Random(seed);
 
             startGenerationAt = typingBeatmap.HitObjects.First().StartTime;
             endGenerationAt = typingBeatmap.HitObjects.Last().StartTime;
