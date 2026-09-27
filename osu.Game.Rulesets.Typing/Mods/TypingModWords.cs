@@ -117,7 +117,13 @@ namespace osu.Game.Rulesets.Typing.Mods
         [SettingSource("Banned consonants", "Skips words containing the set consonants. You can add up to 8 characters.")]
         public Bindable<string> BannedConsonants { get; } = new Bindable<string>(string.Empty);
 
-        [SettingSource("KeyboardLayout", "Primarily used for difficulty calculation. Will also visually affect the Key Timing Distribution, changing the key positions on the matrix.")]
+        // Self note: I know this should not be here and only exist as settings subsection, but since this is being used
+        // in the difficulty calculation (key distance), this was the fastest way of implementation and gameplay-wise,
+        // this is purely cosmetic and changing this does nothing for the gameplay stats, e.g. deliberately changing to
+        // a different layout for some reason. Some day this will be extracted, but this will change a bunch of things
+        // all over the place...
+        [SettingSource("KeyboardLayout", "Primarily used for difficulty calculation. Will also visually affect the Key Timing Distribution, changing the key positions on the matrix. Changing this "
+                                         + "does not affect gameplay.")]
         public Bindable<KeyboardLayoutType> KeyboardLayout { get; } = new Bindable<KeyboardLayoutType>();
 
         public KeyboardLayout SelectedKeyboardLayout { get; private set; } = KEYBOARD_LAYOUTS[KeyboardLayoutType.QwertyStaggered];
