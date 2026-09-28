@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using osu.Game.Rulesets.Typing.Replays;
 
 namespace osu.Game.Rulesets.Typing
 {
@@ -14,8 +13,9 @@ namespace osu.Game.Rulesets.Typing
         /// <summary>
         /// Defines arbitrarily chosen weights for each word length.
         /// <para/>Those numbers were chosen to roughly say: "How many times certain length is chosen per 100 rolls".
-        /// <para/>DO NOT CHANGE __after__ release as this will affect existing replays. Tweak this once and leave it alone.
-        /// <para/>Changing this __should__ result in updating the <see cref="TypingReplaySerialiser.replay_version"/>, because it affects what words are generated.
+        /// <para/>DO NOT CHANGE THIS.
+        /// <para/>Changing this will result both in "bricking" existing replays and affecting the word generation
+        /// on default beatmap seed.
         /// </summary>
         private readonly Dictionary<int, int> wordWeightsByLength = new Dictionary<int, int>
         {

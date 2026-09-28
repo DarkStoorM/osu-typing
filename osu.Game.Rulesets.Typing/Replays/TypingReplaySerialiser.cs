@@ -25,7 +25,6 @@ namespace osu.Game.Rulesets.Typing.Replays
         /// Written after the header.
         /// <para/>This is only for completeness. May not really be necessary, because this assumes the replays may change in the future,
         /// but there is really nothing to change, unless something is clearly broken.
-        /// <para/>This version should be directly tied to the weights defined in <see cref="WeightedRandomWordGenerator"/>.
         /// <list type="bullet">
         /// <item><description>1: Initial version.</description></item>
         /// </list>
