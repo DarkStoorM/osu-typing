@@ -164,10 +164,13 @@ Basically, what it means is that you don't say "someone is good on [x] beatmap",
 
 ![img](https://i.imgur.com/91Lmr8z.png)
 
+Small note: None of the skin elements are present by default, I manually added them. Only the `Playfield` is present and nothing else. This was only for the screenshot purposes.
+
 > [!Important]
 > I really need to record a video on this, should record one soon if I don't find anything else to add to this ruleset :thinking: (I hope so)
 
-These are just random, ranked words generated from curated dictionaries. I parsed all books from Project Gutenberg, ordered words by frequency and manually went through the list and left 2500 words. I didn't feel like there was a need for some fancy text generation algorithms, but at least it could use some n-gram bias, though.
+The generated objects are just random, ranked words generated from curated dictionaries. I parsed all books from Project Gutenberg, ordered 
+words by frequency and manually went through the list and left 2500 words. I didn't feel like there was a need for some fancy text generation algorithms, but at least it could use some n-gram bias, though.
 
 ---
 
