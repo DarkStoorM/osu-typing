@@ -228,7 +228,6 @@ Approximate breakdown for word lengths:
 - `7` \~ 275
 - `9` \~ 75
 - `11` - 24
-- `13` - 1
 
 In my defense, the new words that were added, were scored in a way that every letter lands on different hand, having at most one letter on the same hand. This only applies to the second part of the dictionary, as the first half is just the standard word frequency list (mostly). Some exceptions were made, e.g. natural rolls, like the word: `serpent`:
 
