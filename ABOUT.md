@@ -70,7 +70,7 @@ This ruleset is primarily made for `Words` mod, where you type random words from
   - `Narrow`(\*) - letters land on `1/4`, used for lower BPMs to make the game "play faster" without changing the song rate (100 BPM evaluates to around 80 WPM, 150 BPM -> 120 BPM etc.)
   - `Default` - default, letters land on `1/2`, used for 200\~ BPM (\~80WPM) or 100\~ BPM (40 WPM)
   - `Wide` - letters land on `1/1`. Not really used, maybe for starter WPMs around 40-60 (if songs were mapped to 200-300 BPM)
-- Probably add `Constant Speed` if there are any `Scroll Speed` changes (I come from osu!taiko and I hate SV changes)
+- Probably add `Constant Speed` if there are any BPM changes (I come from osu!taiko and I hate SV changes, but here they only come from variable BPMs)
 - Mod Selection shows the approximate `WPM` based on the most common BPM next to `Difficulty Attributes`
 - Adjust `Scroll Speed` with keybinds (F3-F4 by default) during the gameplay
 
@@ -295,7 +295,7 @@ The reason for such low amount of mods is that it's pretty much what's sufficien
 
 - `NoFail` - this was not supposed to be here since `Difficulty Adjustment` was added to adjust HP drain, but it's just faster to keybind this instead
 - `DoubleTime` / `HalfTime` for rate adjustment
-- `Constant Speed` to remove annoying scroll speed changes
+- `Constant Speed` to remove annoying scroll speed changes (although, they now can only come from BPM changes)
 - `Difficulty Adjustment` mostly for `OD` adjustment and scroll speed fine-tuning, sometimes for `HP`
 
 > [!Note]
