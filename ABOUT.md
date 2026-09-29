@@ -37,6 +37,7 @@ This is not a technical README, but more of a thing that kind of reads like a bl
     - [Customisation](#customisation)
   - [Scoring Changes](#scoring-changes)
   - [DoubleTime / HalfTime Changes to HitWindows](#doubletime--halftime-changes-to-hitwindows)
+  - [Hit Windows Distribution](#hit-windows-distribution)
   - [WPM In Beatmap Attributes](#wpm-in-beatmap-attributes)
     - [Other Beatmap Attributes](#other-beatmap-attributes)
   - [Difficulty Calculator for Typing Ruleset](#difficulty-calculator-for-typing-ruleset)
@@ -169,8 +170,7 @@ Small note: None of the skin elements are present by default, I manually added t
 > [!Important]
 > I really need to record a video on this, should record one soon if I don't find anything else to add to this ruleset :thinking: (I hope so)
 
-The generated objects are just random, ranked words generated from curated dictionaries. I parsed all books from Project Gutenberg, ordered 
-words by frequency and manually went through the list and left 2500 words. I didn't feel like there was a need for some fancy text generation algorithms, but at least it could use some n-gram bias, though.
+The generated objects are just random, ranked words generated from curated dictionaries. I parsed all books from Project Gutenberg, ordered words by frequency and manually went through the list and left 2500 words. I didn't feel like there was a need for some fancy text generation algorithms, but at least it could use some n-gram bias, though.
 
 ---
 
@@ -545,6 +545,16 @@ Although... what difference does this make, timing-wise, if you play a `NoMod 24
 I took the inspiration from osu!mania and reverted the `HitWindows` modifications by applying the DT/HT rage change back to the `HitWindows`.
 
 In my opinion, DT and HT are not difficulty mods. Well, technically, speed change is `difficulty` adjustment, but the additional `HitWindows` change on top of that is not necessary and the timing should remain the same no matter the rate change.
+
+---
+
+## Hit Windows Distribution
+
+Here's a small preview of how the `HitWindows` look like from OD1 to 10:
+
+![img](https://i.imgur.com/sOpWEMn.png)
+
+I was quite unsure of leaving the hit windows even tighter, but after a lot of playtests, I settled with these values.
 
 ---
 

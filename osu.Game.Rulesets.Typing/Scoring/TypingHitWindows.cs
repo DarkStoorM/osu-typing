@@ -17,12 +17,12 @@ namespace osu.Game.Rulesets.Typing.Scoring
         // needed is basically a set of windows used by osu!taiko: 300/100/Miss, so, it might be confusing why all these are
         // even displayed to the user. In reality, OK and MEH are not really needed, but since typing can be quite unstable,
         // might just as well include other windows to see the judgement distribution
-        public static readonly DifficultyRange PERFECT_WINDOW_RANGE = new DifficultyRange(40, 26, 19);
-        public static readonly DifficultyRange GREAT_WINDOW_RANGE = new DifficultyRange(80, 52, 33);
-        public static readonly DifficultyRange GOOD_WINDOW_RANGE = new DifficultyRange(115, 82, 48);
-        public static readonly DifficultyRange OK_WINDOW_RANGE = new DifficultyRange(145, 112, 64);
-        public static readonly DifficultyRange MEH_WINDOW_RANGE = new DifficultyRange(170, 137, 83);
-        public static readonly DifficultyRange MISS_WINDOW_RANGE = new DifficultyRange(205, 167, 104);
+        public static readonly DifficultyRange PERFECT_WINDOW_RANGE = new DifficultyRange(36, 24, 16);
+        public static readonly DifficultyRange GREAT_WINDOW_RANGE = new DifficultyRange(63, 42, 28);
+        public static readonly DifficultyRange GOOD_WINDOW_RANGE = new DifficultyRange(100, 69, 45);
+        public static readonly DifficultyRange OK_WINDOW_RANGE = new DifficultyRange(143, 95, 63);
+        public static readonly DifficultyRange MEH_WINDOW_RANGE = new DifficultyRange(189, 126, 84);
+        public static readonly DifficultyRange MISS_WINDOW_RANGE = new DifficultyRange(238, 159, 106);
 
         private double perfect;
         private double great;
