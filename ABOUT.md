@@ -21,6 +21,7 @@ This is not a technical README, but more of a thing that kind of reads like a bl
     - [About the Word Frequency and Word Generation](#about-the-word-frequency-and-word-generation)
     - [About Dictionaries](#about-dictionaries)
     - [Note On Manually Curated Dictionary](#note-on-manually-curated-dictionary)
+      - [Word Families](#word-families)
     - [Note on Curated Full Alt dictionary](#note-on-curated-full-alt-dictionary)
   - [ZERO Skin Elements](#zero-skin-elements)
   - [Custom Mod Requirement](#custom-mod-requirement)
@@ -217,7 +218,7 @@ While the `Curated` dictionary was initially taken from what I used in the dicti
 
 Also, I recently decided to remove all even-length words from the `Curated` dictionary. Since this is a personal ruleset anyway, I didn't care much about these since off-beats are always awkward. I remade the `Curated` dictionary by mixing the previous words list I had, with a new, scored OANC list (the Written, Open American National Corpus). The words deletion cut the dictionary in half, so the new mix allows for way more variety.
 
-A note though, the OANC mix contains **mostly** cross-hand words, which I just appended to the previous list. The reason is simple: there is no need to mimic the words generation to make it feel like a typing test app. That initially was the goal, but I realised this feature belongs in typing tests, especially since I am using custom word scoring.
+A note though, the OANC mix contains **mostly** cross-hand words (with some exceptions if letters roll or repeat nicely), which I just appended to the previous list. The reason is simple: there is no need to mimic the words generation to make it feel like a typing test app. That initially was the goal, but I realised this feature belongs in typing tests, especially since I am using custom word scoring.
 
 And another, important note: the new curated dictionary is quite overwhelmed with words longer than 3, which was not as much of a problem earlier. That's around `150 : 350` ratio for just five letters long words (previously: `1:3.2`), which in combination with seven letters long words will sound insane for something available and selected by default.
 
@@ -245,6 +246,14 @@ So, with that in mind, even if the longer letters inflate the dictionary a bit, 
 A kinda questionable change to the custom dictionary was that I left some words that represent names and countries, because some of them were actually nice to type (for me, sorry), even if most typing test apps deem them inappropriate (too uncommon in written english).
 
 Another reason why the inflation happened was that I took all 4 and 6 letter words and pluralized them since all even-length words got removed. Not all of them got in, of course. The dictionary would be even bigger, but during the scoring, I decided to "ban" some awkward letter transitions, but we're not gonna talk about that.
+
+#### Word Families
+
+It was **intentional** to include more words from the same family, e.g.:
+
+- ambiguity
+- ambiguous
+- ambiguously
 
 ---
 
