@@ -241,9 +241,9 @@ R: N
 L: T
 ```
 
-So, with that in mind, even if the longer letters inflate the dictionary a bit, they should be easier to type, at least in theory, but what do I know... sounds counterintuitive. Longer words, more stamina and focus required. I manually went through the list again and removed some weird stuff, and again, only kept those that were actually nicer to type after the scoring script spat them out.
+So, with that in mind, even if the longer letters inflate the dictionary a bit, they should be easier to type, at least in theory, but what do I know... sounds counter-intuitive. Longer words, more stamina and focus required. I manually went through the list again and removed some weird stuff, and again, only kept those that were actually nicer to type after the scoring script spat them out.
 
-A kinda questionable change to the custom dictionary was that I left some words that represent names and countries, because some of them were actually nice to type (for me, sorry), even if most typing test apps deem them inappropriate (too uncommon in written english).
+A kinda questionable change to the custom dictionary was that I left some words that represent names and countries, because some of them were actually nice to type (for me, sorry), even if most typing test apps deem them inappropriate (too uncommon in written english). There might be a mix-up with American English and British English in the dictionaries. I think we can ignore this one.
 
 Another reason why the inflation happened was that I took all 4 and 6 letter words and pluralized them since all even-length words got removed. Not all of them got in, of course. The dictionary would be even bigger, but during the scoring, I decided to "ban" some awkward letter transitions, but we're not gonna talk about that.
 
