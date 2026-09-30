@@ -46,6 +46,7 @@ This is not a technical README, but more of a thing that kind of reads like a bl
   - [Sharing Disclaimer](#sharing-disclaimer)
   - [Key Timing Distribution](#key-timing-distribution)
   - [Skinnable Key Timing Distribution](#skinnable-key-timing-distribution)
+  - [Custom Note Hit Sound](#custom-note-hit-sound)
   - [Replays](#replays)
   - [Stuff to "Eventually" Do](#stuff-to-eventually-do)
 
@@ -676,6 +677,18 @@ Might be a bit too distracting, though...
 
 > [!Warning]
 > This might require a change to the `UI Scale` on some resolutions since the size can't be changed on this component...
+
+---
+
+## Custom Note Hit Sound
+
+Ruleset provides an audio sample for non-miss hits, which is just a sound used typing Caps in osu! text boxes (I liked this one the most).
+
+Although, if you want to use your own skin's `normal-hitnormal` sample, you can disable the ruleset sound:
+
+![img](https://i.imgur.com/McRxMhD.png)
+
+---
 
 ## Replays
 

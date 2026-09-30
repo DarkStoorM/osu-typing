@@ -28,6 +28,7 @@ namespace osu.Game.Rulesets.Typing.Configuration
                 DrawableTypingRuleset.SCROLL_TIME_STEP_IN_MILLISECONDS);
 
             SetDefault(TypingRulesetSetting.ScrollAdjustmentCount, 0.0);
+            SetDefault(TypingRulesetSetting.UseRulesetHitSounds, true);
         }
 
         public override TrackedSettings CreateTrackedSettings() => new TrackedSettings
@@ -46,6 +47,7 @@ namespace osu.Game.Rulesets.Typing.Configuration
     public enum TypingRulesetSetting
     {
         ScrollTime,
-        ScrollAdjustmentCount
+        ScrollAdjustmentCount,
+        UseRulesetHitSounds,
     }
 }

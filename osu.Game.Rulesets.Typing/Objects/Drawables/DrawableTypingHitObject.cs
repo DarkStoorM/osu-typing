@@ -13,6 +13,7 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Scoring;
+using osu.Game.Rulesets.Typing.Configuration;
 using osu.Game.Rulesets.Typing.Layouts.KeyboardData;
 using osuTK;
 using osuTK.Graphics;
@@ -36,6 +37,7 @@ namespace osu.Game.Rulesets.Typing.Objects.Drawables
 
         private OsuSpriteText letterText = null!;
         private TypingAction? typingAction;
+        private bool useRulesetHitSamples;
 
         /// <summary>
         /// When <see langword="true"/>, will change the colour of the letter on this object to one that corresponds to
@@ -52,8 +54,10 @@ namespace osu.Game.Rulesets.Typing.Objects.Drawables
             : base(hitObject!) { }
 
         [BackgroundDependencyLoader]
-        private void load(OsuColour colours)
+        private void load(OsuColour colours, TypingRulesetConfigManager config)
         {
+            useRulesetHitSamples = config.GetBindable<bool>(TypingRulesetSetting.UseRulesetHitSounds).Value;
+
             fingerColours.Add(Finger.Index, colours.Blue1);
             fingerColours.Add(Finger.Middle, colours.Green2);
             fingerColours.Add(Finger.Ring, colours.YellowDark);
@@ -112,7 +116,13 @@ namespace osu.Game.Rulesets.Typing.Objects.Drawables
             Position = Vector2.Zero;
         }
 
-        public override IEnumerable<HitSampleInfo> GetSamples() => new[] { new HitSampleInfo("key-caps") };
+        public override IEnumerable<HitSampleInfo> GetSamples() =>
+            new[]
+            {
+                useRulesetHitSamples
+                    ? new HitSampleInfo("key-caps")
+                    : new HitSampleInfo(HitSampleInfo.HIT_NORMAL)
+            };
 
         protected override void CheckForResult(bool userTriggered, double timeOffset)
         {
