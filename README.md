@@ -25,6 +25,9 @@ To make this **really short**, in this ruleset, you type random words to "approx
 
 _BPM_ dictates the difficulty, not the beatmap itself as its contents are replaced.
 
+> [!Important]
+> This ruleset relies on `Words` mod application.
+
 _**Please**_ refer to [this TL;DR](ABOUT.md#a-tldr-on-how-to-play-this) on how to use it in-game.
 
 ---
