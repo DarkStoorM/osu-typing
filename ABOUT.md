@@ -92,11 +92,15 @@ Wide       W . . . O . . . R . . . D
 
 ## Custom Mod Requirement
 
-Since the whole idea was to play with generated words, it's mandatory to have the `Words` mods enabled:
+Since the whole idea was to play with generated words and not letters, it's mandatory to have the `Words` mods enabled:
 
 ![img](https://i.imgur.com/xSsa1Cz.png)
 
-It's still possible to play the actual beatmap with random letters, but I disabled the difficulty calculation for this and explicitly require `Words` mod to be present in order to calculate the star rating. It's not correct anyway, but I'm just experimenting. There is a better ruleset for this in the ruleset collection in the repository, ppy added a `Typer` ruleset, which I just now discovered, go play that for random letters and preserved beatmap objects.
+I couldn't figure out how to do this without involving mods, and I couldn't use `BeatmapConverter` for this at it iterates through objects one by one, so it might be a bit tedious to set things up as a first-timer.
+
+But, in general, I picked such default settings that in theory, they should minimise the time spent on the prep. Although, I can't just guess what is the beatmap BPM range for every user. I assumed it's 180+, so `Default Letter Spacing` is set upon selecting the mod. The rest of the settings don't even have to be touched. It might feel way too cluttered, though.
+
+It's still possible to play the actual beatmap with random letters instead, but I disabled the difficulty calculation for this and explicitly require `Words` mod to be present in order to calculate the star rating. It's not correct anyway, but I'm just experimenting. There is a better ruleset for this in the ruleset collection in the repository, ppy added a `Typer` ruleset, which I just now discovered, go play that for random letters and preserved beatmap objects.
 
 The reason for such low amount of mods is that it's pretty much what's sufficient:
 
@@ -603,6 +607,9 @@ I tweaked the values in a way that they were based on trying to get a four stars
 
 ## Keyboard layouts
 
+> [!Note]
+> Keyboard Layout mod customisation is _**optional**_ and you don't have to touch it if you don't care. The default is `QWERTY`.
+
 A very important note: while this ruleset is obviously unranked and the star rating is not accurate at all, the main mod required for Star Difficulty calculation allows you to select a keyboard layout (qwerty/dvorak/colemak) to adjust the calculation. This is purely for gauging the difficulty if you are playing with the selected layout. This was added mostly out of curiosity rather than supporting layouts the potential player might use.
 
 I did this, because the Star Difficulty calculation contains the following measurements and I needed to see the differences in:
@@ -630,7 +637,7 @@ In that order, Dvorak resulting in around 15% difficulty drop overall from Qwert
 Does it matter? Nope, it's not something that should be measure anyway. It's like you asked the PP Committee team to rework Taiko PP to calculate performance based on playstyles other than assumed `full alt KDDK`: `DDKK`/`KKDD`/`DKKD`/`DDDK`. One would have to be insane enough to create difficulty calculators for all of them and make sure people don't lie.
 
 > [!Note]
-> All the difficulty calculation assumes Touch-Typing. It's basically like Taiko assuming `full alt KDDK`, but `DDKK` playstyles getting free PP from 1/6.
+> All the difficulty calculations assume Touch-Typing. It's basically like Taiko assuming `full alt KDDK`, but `DDKK` playstyles getting free PP from 1/6.
 
 ---
 
