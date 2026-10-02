@@ -1,6 +1,6 @@
 # Custom Ruleset: Typing
 
-![img](https://i.imgur.com/5WSMhgA.png)
+![img](https://github.com/user-attachments/assets/4f49b7b2-f32d-448b-9104-12dfe2a973c2)
 
 For the lack of a better name of course.
 
@@ -94,7 +94,7 @@ Wide       W . . . O . . . R . . . D
 
 Since the whole idea was to play with generated words and not letters, it's mandatory to have the `Words` mods enabled:
 
-![img](https://i.imgur.com/xSsa1Cz.png)
+![img](https://github.com/user-attachments/assets/6a855f5a-dbbc-4443-8bca-f371d099600b)
 
 I couldn't figure out how to do this without involving mods, and I couldn't use `BeatmapConverter` for this at it iterates through objects one by one, so it might be a bit tedious to set things up as a first-timer.
 
@@ -268,7 +268,7 @@ Although out of order, had to save this one for last. I really didn't want to ad
 
 Either way, normally, between the words there is an extra spacing so you have extra time to parse next word and don't have to press space. What this option does is that in the place of that spacing, it inserts a `bonus` HitObject:
 
-![alt](https://i.imgur.com/84ldmoa.png)
+![alt](https://github.com/user-attachments/assets/b8332f16-9559-4ab9-8d5c-264fbfe3f0f5)
 
 I didn't really have anything better to put there as a clickable Space, so I used the `|` character, which is scaled up so it doesn't mix with the text.
 
@@ -292,7 +292,7 @@ If I were to make the `Space` hit window very narrow, which would make it harshe
 
 ### Customisation
 
-![alt](https://i.imgur.com/59n9u0H.png)
+![alt](https://github.com/user-attachments/assets/f78d3c4b-440e-4402-86a0-a3c45ca9a687)
 
 ---
 
@@ -369,7 +369,7 @@ Basically, what it means is that you don't say "someone is good on [x] beatmap",
 
 ## A Very Poor Screenshot + Explanation
 
-![img](https://i.imgur.com/91Lmr8z.png)
+![img](https://github.com/user-attachments/assets/557c3063-5ce4-4f17-a976-88c685561936)
 
 Small note: None of the skin elements are present by default, I manually added them. Only the `Playfield` is present and nothing else. This was only for the screenshot purposes.
 
@@ -503,9 +503,9 @@ I had this weird idea of colouring the objects so they map to specific fingers, 
 
 I also didn't add any images for this, because I wasn't planning on keeping this mod. Not like anyone would choose this to learn touch-typing over things like `Keybr`.
 
-![alt](https://i.imgur.com/OFvaKPn.png)
+![alt](https://github.com/user-attachments/assets/cc3ab189-648b-4704-afb0-c9c3c3e57e0f)
 
-![alt](https://i.imgur.com/rgroVQ7.png)
+![alt](https://github.com/user-attachments/assets/40c0ba12-fea1-4878-80b4-c1a4ba1ea137)
 
 (This is my osu! layer for this ruleset)
 
@@ -517,7 +517,7 @@ The reason I didn't add a guide image for this is because osu!lazer already allo
   - Select: `Skinnable Sprite`
   - Select your image from the dropdown (if this is the only image in the folder, it will be there by default)
 
-![alt](https://i.imgur.com/sNxBqc7.png)
+![alt](https://github.com/user-attachments/assets/61dc5347-202c-4b99-9300-f19483e75341)
 
 ## Scoring Changes
 
@@ -559,7 +559,7 @@ In my opinion, DT and HT are not difficulty mods. Well, technically, speed chang
 
 Here's a small preview of how the `HitWindows` look like from OD1 to 10:
 
-![img](https://i.imgur.com/sOpWEMn.png)
+![img](https://github.com/user-attachments/assets/bc9764b8-bd45-4cc0-b8b6-ccb24fdc50d1)
 
 I was quite unsure of leaving the hit windows even tighter, but after a lot of playtests, I settled with these values.
 
@@ -569,9 +569,9 @@ I was quite unsure of leaving the hit windows even tighter, but after a lot of p
 
 Since I wanted a WPM preview with the mods applied on the beatmaps, I added it to the song selection:
 
-![alt](https://i.imgur.com/AtLbgVa.png)
+![alt](https://github.com/user-attachments/assets/71e20fa3-ed73-4a2c-8eff-88f27e659015)
 
-![alt](https://i.imgur.com/dhPX6WR.png)
+![alt](https://github.com/user-attachments/assets/5f61b774-804c-44b1-b7ee-b3134bf41d1e)
 
 ---
 
@@ -583,11 +583,11 @@ OD grants extra score, so it would be nice to also have an adjustable value visi
 
 I also added the computed `Total Score` to the beatmap attributes with a breakdown thanks to `Additional Metrics`:
 
-![alt](https://i.imgur.com/vMTmEfA.png)
+![alt](https://github.com/user-attachments/assets/deab66ad-e933-47e5-94c1-6b03966958c4)
 
 Although, it does not look very good in the mod select if HP is a two-digit...
 
-![alt](https://i.imgur.com/wFhuzyy.png)
+![alt](https://github.com/user-attachments/assets/55cbfec7-254c-4e2f-a170-644d295dda1d)
 
 That's a _whatever_.
 
@@ -653,13 +653,13 @@ Also, I won't be sharing this in the [Custom Ruleset Directory](https://github.c
 
 A hacky keyboard preview with unstable rate per key. The layout is the default staggered, can't be bothered figuring out the split layouts. The keys will be taken from the mod directly since you can now select the layout from the customisation.
 
-![alt](https://i.imgur.com/elxKdHD.png)
+![alt](https://github.com/user-attachments/assets/5c9f5749-252b-4dba-8e2a-8f801a2f3c17)
 
 Couldn't really come up with anything better for now, I just needed the Unstable Rate. The size is hardcoded, though, couldn't figure out how to make the auto scale to work. The cards show the key with successful hits (green) and missed (red). The colours were taken directly from Star Rating, except I made it darker, because with more surface area, they were too prominent.
 
 The colour spectrum from SR, where starting point (green) is `80`, ends on `260` (dark blue).
 
-![alt](https://i.imgur.com/qz0Jbcp.png)
+![alt](https://github.com/user-attachments/assets/4bc5afcb-a9ca-47d4-9686-709e007743fc)
 
 The current colour spectrum for keys don't include Blue, I just started from Green, which naturally says "good", and the value for Unstable Rate where the colour starts fading into others is `80`. Just an arbitrary value I chose for the lowest I could personally reach while playing, so there was no real tweaking for what the best value would be.
 
@@ -673,7 +673,7 @@ Initially, I added the Unstable Rate preview to the result screen as mentioned a
 
 Might be a bit too distracting, though...
 
-![alt](https://i.imgur.com/qamL2EV.png)
+![alt](https://github.com/user-attachments/assets/4808b9ae-e66f-401b-bd61-d29e75e73307)
 
 > [!Warning]
 > This might require a change to the `UI Scale` on some resolutions since the size can't be changed on this component...
@@ -686,7 +686,7 @@ Ruleset provides an audio sample for non-miss hits, which is just a sound used t
 
 Although, if you want to use your own skin's `normal-hitnormal` sample, you can disable the ruleset sound:
 
-![img](https://i.imgur.com/McRxMhD.png)
+![img](https://github.com/user-attachments/assets/45a2826b-a681-4584-8f22-8fb92a67bf90)
 
 ---
 
