@@ -14,18 +14,7 @@ This is not a technical README, but more of a thing that kind of reads like a bl
   - [Motivation](#motivation)
   - [A TL;DR on how to play this](#a-tldr-on-how-to-play-this)
     - [Note on Letter Spacing](#note-on-letter-spacing)
-  - [The Big Question... What, and Why?](#the-big-question-what-and-why)
-    - [About Beatmap Content Replacement](#about-beatmap-content-replacement)
-    - [So, why?](#so-why)
-  - [A Very Poor Screenshot + Explanation](#a-very-poor-screenshot--explanation)
-    - [About the Word Frequency and Word Generation](#about-the-word-frequency-and-word-generation)
-    - [About Dictionaries](#about-dictionaries)
-    - [Note On Manually Curated Dictionary](#note-on-manually-curated-dictionary)
-      - [Word Families](#word-families)
-    - [Note on Curated Full Alt dictionary](#note-on-curated-full-alt-dictionary)
-  - [ZERO Skin Elements](#zero-skin-elements)
   - [Custom Mod Requirement](#custom-mod-requirement)
-  - [Finger Guide](#finger-guide)
   - [About the Custom Mod](#about-the-custom-mod)
     - [Adjusting Word Spacing](#adjusting-word-spacing)
       - [Unintentional Bonus Mode](#unintentional-bonus-mode)
@@ -36,6 +25,17 @@ This is not a technical README, but more of a thing that kind of reads like a bl
     - [Space Between Words as Bonus](#space-between-words-as-bonus)
       - [The Issues](#the-issues)
     - [Customisation](#customisation)
+  - [The Big Question... What, and Why?](#the-big-question-what-and-why)
+    - [About Beatmap Content Replacement](#about-beatmap-content-replacement)
+    - [So, why?](#so-why)
+  - [A Very Poor Screenshot + Explanation](#a-very-poor-screenshot--explanation)
+    - [About the Word Frequency and Word Generation](#about-the-word-frequency-and-word-generation)
+    - [About Dictionaries](#about-dictionaries)
+    - [Note On Manually Curated Dictionary](#note-on-manually-curated-dictionary)
+      - [Word Families](#word-families)
+    - [Note on Curated Full Alt dictionary](#note-on-curated-full-alt-dictionary)
+  - [ZERO Skin Elements](#zero-skin-elements)
+  - [Finger Guide](#finger-guide)
   - [Scoring Changes](#scoring-changes)
   - [DoubleTime / HalfTime Changes to HitWindows](#doubletime--halftime-changes-to-hitwindows)
   - [Hit Windows Distribution](#hit-windows-distribution)
@@ -89,6 +89,206 @@ Narrow     W O R D
 Default    W . O . R . D
 Wide       W . . . O . . . R . . . D
 ```
+
+## Custom Mod Requirement
+
+Since the whole idea was to play with generated words, it's mandatory to have the `Words` mods enabled:
+
+![img](https://i.imgur.com/xSsa1Cz.png)
+
+It's still possible to play the actual beatmap with random letters, but I disabled the difficulty calculation for this and explicitly require `Words` mod to be present in order to calculate the star rating. It's not correct anyway, but I'm just experimenting. There is a better ruleset for this in the ruleset collection in the repository, ppy added a `Typer` ruleset, which I just now discovered, go play that for random letters and preserved beatmap objects.
+
+The reason for such low amount of mods is that it's pretty much what's sufficient:
+
+- `NoFail` - this was not supposed to be here since `Difficulty Adjustment` was added to adjust HP drain, but it's just faster to keybind this instead
+- `DoubleTime` / `HalfTime` for rate adjustment
+- `Constant Speed` to remove annoying scroll speed changes (although, they now can only come from BPM changes)
+- `Difficulty Adjustment` mostly for `OD` adjustment and scroll speed fine-tuning, sometimes for `HP`
+
+> [!Note]
+> While `Scroll Speed` can be adjusted through the `Difficulty Adjustment` mod, the keybinds for `Increase/Decrease` scroll speed will also work in case the beatmap Scroll Speed is super low and the keybind adjustment happens to not increase as much on the maximum value (`100`).
+
+Also...
+
+> [!Note]
+> The mod is applied to all visible difficulties, so the structure of the current beatmap difficulty does not matter, because the mod replaces the entire beatmap. This will result in all difficulties having the same Star Rating if custom Seed is applied.
+>
+> If all beatmaps have the same Drain Time, they will have a very similar Star Rating. This is intentional given how the mod works and it does not matter which difficulty is played with this mod.
+
+## About the Custom Mod
+
+This mod recommended to be customised, because beatmaps are so different, it's literally impossible to make all of them playable with a click of a button.
+
+I wanted to be able to play this ruleset on a wide range of beatmaps, so I added the following setting: `Letter Spacing`. This will effectively double or halve the BPM to let me play for example a 100 BPM beatmap. The reason why is that the mod is generating hit objects at 1/4 for words, 1/2 for spaces between the words. This can be quite slow, so without having to use the DoubleTime to fine-tune and play on rate changed song, I can play it on 200 BPM, which is roughly 80 WPM.
+
+_Words Per Minute_ can be calculated simply by dividing BPM by 5. Average word is assumed to be 5 letters, thus 5 beats, but since letters are spaces by 1/2, this value becomes 2.5. This only applies to `Default Letter Spacing`.
+
+E.g. if a song is 260 BPM and default settings are used (like playing 130 BPM), the WPM is approximately 104.
+
+> [!Note]
+> For example, 120 WPM can be set through the following
+>
+> - 150 BPM + `Narrow Letter Spacing` (on 1/4): `150 BPM / 1.25` or `150 BPM * 0.8` \~120 WPM
+> - 300 BPM + `Default Letter Spacing` (on 1/2): `300 BPM / 2.5` or `300 BPM * 0.4` \~120 WPM
+> - 240 BPM + DT -> 300 BPM + `Default Letter Spacing`
+
+I'm not really covering the `Wide Letter Spacing` (`5` divisor or `0.2` BPM multiplier), because it's meant for lower WPM, which I'm not really interested in.
+
+But, in short, `60 WPM` with this customisation can be set on things like:
+
+- 240 BPM + DT -> 300 BPM
+
+---
+
+### Adjusting Word Spacing
+
+There is also a setting to increase the spacing between words, because why not?
+
+This, instead of inserting a one letter break, it inserts at least a full 1/1 break, which gives enough recovery time between the words, allowing to play on higher BPMs, since there is more time to fully parse the incoming word.
+
+That comes with a cost of lowered difficulty and score, though, since the sustained speed and typing fatigue decreases with such breaks, so, glad the difficulty calculation can pick that up (somewhat, but it's still **very** jank).
+
+By default, a Narrow word spacing is used as opposed to letter spacing, and there are three settings for this:
+
+- `Narrow` (Default): one letter gap between the words
+- `Full Beat`: the closest 1/1 with an exception where the word is too close to the beat (3, 7 word lengths). May create an odd rhythm since words can start on `even` beat after 1 and 7 letters long words
+- `Every Other Full Beat`: words are basically snapped to a second quarter in a full 4/4
+
+To visualise how the every other beat snap looks, here's an example for all 1/3/5/7 letters long words (above this length, it wraps around, conveniently, so it looks the same for 9/11/13/15 lengths):
+
+```plaintext
+X marks where the next word starts
+Indexed from 1
+
+   -------- FULL BEAT SPACING --------
+   1   -   2   -   3   -   4   -   1
+   Odd     Even    Odd     Even    Odd
+   |       |       |       |       |
+1  I . . . X . . . | . . . | . . . |
+3  H E R . | . . . X . . . | . . . |
+5  P L A Y S . . . X . . . | . . . |
+7  W I T H O U T . | . . . X . . . |
+
+   ----- EVERY OTHER BEAT SPACING ----
+   1   -   2   -   3   -   4   -   1
+   Odd     Even    Odd     Even    Odd
+   |       |       |       |       |
+1  I . . . | . . . X . . . | . . . |
+3  H E R . | . . . X . . . | . . . |
+5  P L A Y S . . . | . . . | . . . X
+7  W I T H O U T . | . . . | . . . X
+```
+
+With the increased spacing to `Every Other Full Beat`, I decided to make the gap wider for 5 letters long words, which might be way too much, but I had to do this to give more breathing room. The reason for this is that such customisation would most likely be used for bursting on higher BPMs and the 5 letters long words would appear too quick. With 3 letters long words it's "good enough".
+
+---
+
+#### Unintentional Bonus Mode
+
+_Surprisingly_, the word snapping customisation kind of works really well on higher BPMs + `Narrow Letter Spacing` for more "burst-oriented" gameplay. Even `Bonus Spaces` are somewhat playable with this.
+
+For example, if you can burst 160WPM, you can play a 200BPM beatmap with `Narrow Letter Spacing` and the word snap.
+
+---
+
+### Banned Consonants
+
+This will skip all words containing any of the consonants from this component. You can ban a maximum of 8 consonants. You can simply type something like `xcvbj`.
+
+Not really recommended for usual gameplay, this is more like a _chill_ setting.
+
+---
+
+### Forced Cross-Hand on New Words
+
+I decided to add this option and make it `on` by default.
+
+The reasoning behind is that I already kind of took the inspiration from taiko, where alternating hands make some patterns more comfortable to play, so that's also why the custom dictionary was extended to contain more _almost_ "full alt" words, with some exceptions, e.g. allowing at most one or two keys on same hand on longer words, and `-ing` trigram.
+
+Taking this further, I changed how the mod behaves by forcing the next word to start on different hand. Look at the following example:
+
+| Previously                                                        | Now                      |
+| ----------------------------------------------------------------- | ------------------------ |
+| figh**t** - `L` into `L` `[nope]` <- kinda meh transition to next | figh**t** - `L` into `R` |
+| go**d** - `L` into `L` `[nope]`                                   | poin**t** - `L` into `R` |
+| dither**s**                                                       | ma**n**                  |
+
+Not like it matters anyway, some transitions are not that awkward, e.g. same letter, natural roll. I didn't really wanted to think much about this, so I just rolled with it.
+
+In general, hand switch is more comfortable, because in this situation, when one hand types, another one is getting ready to type, so this can be treated as difficulty reduction I guess (?)
+
+Anyway, this can be disabled as I didn't want to force the mod to generate words like that.
+
+---
+
+#### Important Note on Cross-Hand Play
+
+While, as already mentioned, this is based on taiko gameplay favouring hand alternating, this is obviously not how you normally type, because naturally, typists develop "chording" or they "violate" the touch-typing rules to type even faster.
+
+None of this really applies here, because:
+
+> - You are required to be 100% consistent for perfect score.
+
+Consistency in typing means your time between key presses are nearly identical, which means your consistency drops when chording, which then translates into not hitting the correct `HitWindow` for all letters. So, sadly, chording might not be useful here, because you have to force yourself to wait for correct letter judgement.
+
+To be clear, not like it's a bad thing, because every day typing is not a game, you don't have to type at perfect rate to everyone. Chording is fun.
+
+Anyway, take a look at this example:
+
+- `[R] po` | `[L] wer` | `[R] poin` | `[L] t`
+- Sometimes even with left hand overreaching `[R] po` | `[L] wer` | `[R] poi` | `[L] nt`
+
+Chording helps with "reducing" the keystrokes, but I'm not getting into the theory of this. It increases the Unstable Rate unless you force your hands to get into chording position and only type at consistent rate, which I believe is more taxing (?)
+
+---
+
+### Word Seed
+
+This makes _everything_ deterministic. Custom seed should only be used if you intend on repeating the play on the same beatmap, because this effectively makes _all_ visible beatmaps to be regenerated with the same seed.
+
+It results in the same exact Star Rating across all beatmaps with the same properties, especially in a beatmapset, e.g. if all difficulties in a beatmap have the same drain time and no BPM changes, the Star Rating will be the same.
+
+It would seem like there is no point in using the seed, because ultimately, the only difference would be how individual songs feel.
+
+There is an important note, though, but first, this is how seed customisation works:
+
+- **The default value `0`**: you don't have to touch it. Each difficulty will have its own seed that is calculated from beatmap hash. This change was not really necessary, but it can somewhat be seen as having a random and fixed seed at the same time in case you want to retry the same seed without having to explicitly set it in the mod customisation
+- **Leaving the Seed empty**: if you want a random seed on every session and if you don't mind playing a different seed on each retry
+- **Explicitly setting the seed**: probably the least used setting, but you can set any number you like to lock the different generation seed
+
+---
+
+### Space Between Words as Bonus
+
+Although out of order, had to save this one for last. I really didn't want to add this, but I felt like the mod wouldn't be "whole" without it. The TL;DR of it is that it creates some issues I don't know how to deal with.
+
+Either way, normally, between the words there is an extra spacing so you have extra time to parse next word and don't have to press space. What this option does is that in the place of that spacing, it inserts a `bonus` HitObject:
+
+![alt](https://i.imgur.com/84ldmoa.png)
+
+I didn't really have anything better to put there as a clickable Space, so I used the `|` character, which is scaled up so it doesn't mix with the text.
+
+The bonus is calculated to be 25% extra of maximum score, so you get `1_250_000` with an SS.
+
+I initially set it to 10%, but it's really hard to play with this as it's a constant stream...
+
+I'm not really using it myself, because this technically creates an actual stream that basically forces you to 100% lock in or you die (there are literally no recovery times since you are always pressing something). This is basically the main reason why, by default, space was never really intended to be used.
+
+So, I will only treat this as an experiment on `ScoreProcessor` and optional objects.
+
+#### The Issues
+
+My design choice was to not make it a required `HitObject`, e.g. adding the same object that is used for letters, but with Space, so I made a new one, whose `HitResult` is `LargeBonus`, which makes it so that you can miss it safely or even press a different key on it without losing combo.
+
+Now, the issue is that while I wanted this to be fully optional, its `HitWindow` may overlap with the letters if you play on low `OD`. This created an issue where you are actually required to hit it, otherwise you will note-lock, because you will attempt to start typing a word when `Space` hit window was still active, which, sadly sucks, but I couldn't figure anything out here.
+
+If I were to make the `Space` hit window very narrow, which would make it harsher than OD10 taiko hit to fix this (somewhere around OD10 mania MAX), it would "work", but man, try hitting space a bit late and you start note-locking again.
+
+---
+
+### Customisation
+
+![alt](https://i.imgur.com/59n9u0H.png)
 
 ---
 
@@ -293,32 +493,6 @@ By default, whole playfield is intentionally empty, so cluttering the window is 
 
 ---
 
-## Custom Mod Requirement
-
-Since the whole idea was to play with generated words, it's mandatory to have the `Words` mods enabled:
-
-![img](https://i.imgur.com/xSsa1Cz.png)
-
-It's still possible to play the actual beatmap with random letters, but I disabled the difficulty calculation for this and explicitly require `Words` mod to be present in order to calculate the star rating. It's not correct anyway, but I'm just experimenting. There is a better ruleset for this in the ruleset collection in the repository, ppy added a `Typer` ruleset, which I just now discovered, go play that for random letters and preserved beatmap objects.
-
-The reason for such low amount of mods is that it's pretty much what's sufficient:
-
-- `NoFail` - this was not supposed to be here since `Difficulty Adjustment` was added to adjust HP drain, but it's just faster to keybind this instead
-- `DoubleTime` / `HalfTime` for rate adjustment
-- `Constant Speed` to remove annoying scroll speed changes (although, they now can only come from BPM changes)
-- `Difficulty Adjustment` mostly for `OD` adjustment and scroll speed fine-tuning, sometimes for `HP`
-
-> [!Note]
-> While `Scroll Speed` can be adjusted through the `Difficulty Adjustment` mod, the keybinds for `Increase/Decrease` scroll speed will also work in case the beatmap Scroll Speed is super low and the keybind adjustment happens to not increase as much on the maximum value (`100`).
-
-Also...
-
-> [!Note]
-> The mod is applied to all visible difficulties, so the structure of the current beatmap difficulty does not matter, because the mod replaces the entire beatmap. This will result in all difficulties having the same Star Rating if custom Seed is applied.
->
-> If all beatmaps have the same Drain Time, they will have a very similar Star Rating. This is intentional given how the mod works and it does not matter which difficulty is played with this mod.
----
-
 ## Finger Guide
 
 I had this weird idea of colouring the objects so they map to specific fingers, which I don't even think is useful, but I left it in anyway. Might be more distracting later on, but I think the colour-to-finger mapping adaptation is quite fast.
@@ -340,187 +514,6 @@ The reason I didn't add a guide image for this is because osu!lazer already allo
   - Select your image from the dropdown (if this is the only image in the folder, it will be there by default)
 
 ![alt](https://i.imgur.com/sNxBqc7.png)
-
----
-
-## About the Custom Mod
-
-This mod recommended to be customised, because beatmaps are so different, it's literally impossible to make all of them playable with a click of a button.
-
-I wanted to be able to play this ruleset on a wide range of beatmaps, so I added the following setting: `Letter Spacing`. This will effectively double or halve the BPM to let me play for example a 100 BPM beatmap. The reason why is that the mod is generating hit objects at 1/4 for words, 1/2 for spaces between the words. This can be quite slow, so without having to use the DoubleTime to fine-tune and play on rate changed song, I can play it on 200 BPM, which is roughly 80 WPM.
-
-_Words Per Minute_ can be calculated simply by dividing BPM by 5. Average word is assumed to be 5 letters, thus 5 beats, but since letters are spaces by 1/2, this value becomes 2.5. This only applies to `Default Letter Spacing`.
-
-E.g. if a song is 260 BPM and default settings are used (like playing 130 BPM), the WPM is approximately 104.
-
-> [!Note]
-> For example, 120 WPM can be set through the following
->
-> - 150 BPM + `Narrow Letter Spacing` (on 1/4): `150 BPM / 1.25` or `150 BPM * 0.8` \~120 WPM
-> - 300 BPM + `Default Letter Spacing` (on 1/2): `300 BPM / 2.5` or `300 BPM * 0.4` \~120 WPM
-> - 240 BPM + DT -> 300 BPM + `Default Letter Spacing`
-
-I'm not really covering the `Wide Letter Spacing` (`5` divisor or `0.2` BPM multiplier), because it's meant for lower WPM, which I'm not really interested in.
-
-But, in short, `60 WPM` with this customisation can be set on things like:
-
-- 240 BPM + DT -> 300 BPM
-
----
-
-### Adjusting Word Spacing
-
-There is also a setting to increase the spacing between words, because why not?
-
-This, instead of inserting a one letter break, it inserts at least a full 1/1 break, which gives enough recovery time between the words, allowing to play on higher BPMs, since there is more time to fully parse the incoming word.
-
-That comes with a cost of lowered difficulty and score, though, since the sustained speed and typing fatigue decreases with such breaks, so, glad the difficulty calculation can pick that up (somewhat, but it's still **very** jank).
-
-By default, a Narrow word spacing is used as opposed to letter spacing, and there are three settings for this:
-
-- `Narrow` (Default): one letter gap between the words
-- `Full Beat`: the closest 1/1 with an exception where the word is too close to the beat (3, 7 word lengths). May create an odd rhythm since words can start on `even` beat after 1 and 7 letters long words
-- `Every Other Full Beat`: words are basically snapped to a second quarter in a full 4/4
-
-To visualise how the every other beat snap looks, here's an example for all 1/3/5/7 letters long words (above this length, it wraps around, conveniently, so it looks the same for 9/11/13/15 lengths):
-
-```plaintext
-X marks where the next word starts
-Indexed from 1
-
-   -------- FULL BEAT SPACING --------
-   1   -   2   -   3   -   4   -   1
-   Odd     Even    Odd     Even    Odd
-   |       |       |       |       |
-1  I . . . X . . . | . . . | . . . |
-3  H E R . | . . . X . . . | . . . |
-5  P L A Y S . . . X . . . | . . . |
-7  W I T H O U T . | . . . X . . . |
-
-   ----- EVERY OTHER BEAT SPACING ----
-   1   -   2   -   3   -   4   -   1
-   Odd     Even    Odd     Even    Odd
-   |       |       |       |       |
-1  I . . . | . . . X . . . | . . . |
-3  H E R . | . . . X . . . | . . . |
-5  P L A Y S . . . | . . . | . . . X
-7  W I T H O U T . | . . . | . . . X
-```
-
-With the increased spacing to `Every Other Full Beat`, I decided to make the gap wider for 5 letters long words, which might be way too much, but I had to do this to give more breathing room. The reason for this is that such customisation would most likely be used for bursting on higher BPMs and the 5 letters long words would appear too quick. With 3 letters long words it's "good enough".
-
----
-
-#### Unintentional Bonus Mode
-
-_Surprisingly_, the word snapping customisation kind of works really well on higher BPMs + `Narrow Letter Spacing` for more "burst-oriented" gameplay. Even `Bonus Spaces` are somewhat playable with this.
-
-For example, if you can burst 160WPM, you can play a 200BPM beatmap with `Narrow Letter Spacing` and the word snap.
-
----
-
-### Banned Consonants
-
-This will skip all words containing any of the consonants from this component. You can ban a maximum of 8 consonants. You can simply type something like `xcvbj`.
-
-Not really recommended for usual gameplay, this is more like a _chill_ setting.
-
----
-
-### Forced Cross-Hand on New Words
-
-I decided to add this option and make it `on` by default.
-
-The reasoning behind is that I already kind of took the inspiration from taiko, where alternating hands make some patterns more comfortable to play, so that's also why the custom dictionary was extended to contain more _almost_ "full alt" words, with some exceptions, e.g. allowing at most one or two keys on same hand on longer words, and `-ing` trigram.
-
-Taking this further, I changed how the mod behaves by forcing the next word to start on different hand. Look at the following example:
-
-| Previously                                                        | Now                      |
-| ----------------------------------------------------------------- | ------------------------ |
-| figh**t** - `L` into `L` `[nope]` <- kinda meh transition to next | figh**t** - `L` into `R` |
-| go**d** - `L` into `L` `[nope]`                                   | poin**t** - `L` into `R` |
-| dither**s**                                                       | ma**n**                  |
-
-Not like it matters anyway, some transitions are not that awkward, e.g. same letter, natural roll. I didn't really wanted to think much about this, so I just rolled with it.
-
-In general, hand switch is more comfortable, because in this situation, when one hand types, another one is getting ready to type, so this can be treated as difficulty reduction I guess (?)
-
-Anyway, this can be disabled as I didn't want to force the mod to generate words like that.
-
----
-
-#### Important Note on Cross-Hand Play
-
-While, as already mentioned, this is based on taiko gameplay favouring hand alternating, this is obviously not how you normally type, because naturally, typists develop "chording" or they "violate" the touch-typing rules to type even faster.
-
-None of this really applies here, because:
-
-> - You are required to be 100% consistent for perfect score.
-
-Consistency in typing means your time between key presses are nearly identical, which means your consistency drops when chording, which then translates into not hitting the correct `HitWindow` for all letters. So, sadly, chording might not be useful here, because you have to force yourself to wait for correct letter judgement.
-
-To be clear, not like it's a bad thing, because every day typing is not a game, you don't have to type at perfect rate to everyone. Chording is fun.
-
-Anyway, take a look at this example:
-
-- `[R] po` | `[L] wer` | `[R] poin` | `[L] t`
-- Sometimes even with left hand overreaching `[R] po` | `[L] wer` | `[R] poi` | `[L] nt`
-
-Chording helps with "reducing" the keystrokes, but I'm not getting into the theory of this. It increases the Unstable Rate unless you force your hands to get into chording position and only type at consistent rate, which I believe is more taxing (?)
-
----
-
-### Word Seed
-
-This makes _everything_ deterministic. Custom seed should only be used if you intend on repeating the play on the same beatmap, because this effectively makes _all_ visible beatmaps to be regenerated with the same seed.
-
-It results in the same exact Star Rating across all beatmaps with the same properties, especially in a beatmapset, e.g. if all difficulties in a beatmap have the same drain time and no BPM changes, the Star Rating will be the same.
-
-It would seem like there is no point in using the seed, because ultimately, the only difference would be how individual songs feel.
-
-There is an important note, though, but first, this is how seed customisation works:
-
-- **The default value `0`**: you don't have to touch it. Each difficulty will have its own seed that is calculated from beatmap hash. This change was not really necessary, but it can somewhat be seen as having a random and fixed seed at the same time in case you want to retry the same seed without having to explicitly set it in the mod customisation
-- **Leaving the Seed empty**: if you want a random seed on every session and if you don't mind playing a different seed on each retry
-- **Explicitly setting the seed**: probably the least used setting, but you can set any number you like to lock the different generation seed
-
----
-
-### Space Between Words as Bonus
-
-Although out of order, had to save this one for last. I really didn't want to add this, but I felt like the mod wouldn't be "whole" without it. The TL;DR of it is that it creates some issues I don't know how to deal with.
-
-Either way, normally, between the words there is an extra spacing so you have extra time to parse next word and don't have to press space. What this option does is that in the place of that spacing, it inserts a `bonus` HitObject:
-
-![alt](https://i.imgur.com/84ldmoa.png)
-
-I didn't really have anything better to put there as a clickable Space, so I used the `|` character, which is scaled up so it doesn't mix with the text.
-
-The bonus is calculated to be 25% extra of maximum score, so you get `1_250_000` with an SS.
-
-I initially set it to 10%, but it's really hard to play with this as it's a constant stream...
-
-I'm not really using it myself, because this technically creates an actual stream that basically forces you to 100% lock in or you die (there are literally no recovery times since you are always pressing something). This is basically the main reason why, by default, space was never really intended to be used.
-
-So, I will only treat this as an experiment on `ScoreProcessor` and optional objects.
-
----
-
-#### The Issues
-
-My design choice was to not make it a required `HitObject`, e.g. adding the same object that is used for letters, but with Space, so I made a new one, whose `HitResult` is `LargeBonus`, which makes it so that you can miss it safely or even press a different key on it without losing combo.
-
-Now, the issue is that while I wanted this to be fully optional, its `HitWindow` may overlap with the letters if you play on low `OD`. This created an issue where you are actually required to hit it, otherwise you will note-lock, because you will attempt to start typing a word when `Space` hit window was still active, which, sadly sucks, but I couldn't figure anything out here.
-
-If I were to make the `Space` hit window very narrow, which would make it harsher than OD10 taiko hit to fix this (somewhere around OD10 mania MAX), it would "work", but man, try hitting space a bit late and you start note-locking again.
-
----
-
-### Customisation
-
-![alt](https://i.imgur.com/59n9u0H.png)
-
----
 
 ## Scoring Changes
 
