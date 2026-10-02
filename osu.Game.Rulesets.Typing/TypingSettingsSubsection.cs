@@ -11,6 +11,8 @@ namespace osu.Game.Rulesets.Typing
 {
     public partial class TypingSettingsSubsection : RulesetSettingsSubsection
     {
+        private const string ruleset_hit_sounds_hint_text = "Play the ruleset's note-hit sound instead of the skin's hit sound.";
+
         public TypingSettingsSubsection(TypingRuleset ruleset)
             : base(ruleset)
         {
@@ -26,7 +28,7 @@ namespace osu.Game.Rulesets.Typing
                 new SettingsItemV2(new FormCheckBox
                 {
                     Caption = "Use ruleset hit sound",
-                    HintText = "Play the ruleset's note-hit sound instead of the skin's hit sound.",
+                    HintText = ruleset_hit_sounds_hint_text,
                     Current = config.GetBindable<bool>(TypingRulesetSetting.UseRulesetHitSounds)
                 })
             };
