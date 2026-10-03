@@ -4,6 +4,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using osu.Framework.Allocation;
+using osu.Framework.Bindables;
 using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Input.Bindings;
@@ -37,7 +38,11 @@ namespace osu.Game.Rulesets.Typing.Objects.Drawables
 
         private OsuSpriteText letterText = null!;
         private TypingAction? typingAction;
-        private bool useRulesetHitSamples;
+
+        /// <summary>
+        /// Bound to config manager to automatically reload samples whenever the user toggles the <see cref="TypingSettingsSubsection.ruleset_hit_sounds_hint_text"/>.
+        /// </summary>
+        private readonly BindableBool useRulesetHitSamples = new BindableBool();
 
         /// <summary>
         /// When <see langword="true"/>, will change the colour of the letter on this object to one that corresponds to
@@ -56,7 +61,9 @@ namespace osu.Game.Rulesets.Typing.Objects.Drawables
         [BackgroundDependencyLoader]
         private void load(OsuColour colours, TypingRulesetConfigManager config)
         {
-            useRulesetHitSamples = config.GetBindable<bool>(TypingRulesetSetting.UseRulesetHitSounds).Value;
+            config.BindWith(TypingRulesetSetting.UseRulesetHitSounds, useRulesetHitSamples);
+
+            useRulesetHitSamples.BindValueChanged(_ => LoadSamples());
 
             fingerColours.Add(Finger.Index, colours.Blue1);
             fingerColours.Add(Finger.Middle, colours.Green2);
@@ -119,7 +126,7 @@ namespace osu.Game.Rulesets.Typing.Objects.Drawables
         public override IEnumerable<HitSampleInfo> GetSamples() =>
             new[]
             {
-                useRulesetHitSamples
+                useRulesetHitSamples.Value
                     ? new HitSampleInfo("key-caps")
                     : new HitSampleInfo(HitSampleInfo.HIT_NORMAL)
             };
