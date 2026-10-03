@@ -32,6 +32,8 @@ _**Please**_ refer to [this TL;DR](ABOUT.md#a-tldr-on-how-to-play-this) on how t
 
 This repository was never meant to be published, because it's more of a personal project, so, it remains feature-frozen.
 
+**Do not treat this as a typing test game.**
+
 ---
 
 ## Building
