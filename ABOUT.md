@@ -47,6 +47,7 @@ This is not a technical README, but more of a thing that kind of reads like a bl
   - [Key Timing Distribution](#key-timing-distribution)
   - [Skinnable Key Timing Distribution](#skinnable-key-timing-distribution)
   - [Custom Note Hit Sound](#custom-note-hit-sound)
+  - [Where are the Tests?](#where-are-the-tests)
   - [Replays](#replays)
   - [Stuff to "Eventually" Do](#stuff-to-eventually-do)
 
@@ -687,6 +688,16 @@ Ruleset provides an audio sample for non-miss hits, which is just a sound used t
 Although, if you want to use your own skin's `normal-hitnormal` sample, you can disable the ruleset sound:
 
 ![img](https://github.com/user-attachments/assets/45a2826b-a681-4584-8f22-8fb92a67bf90)
+
+---
+
+## Where are the Tests?
+
+Nowhere. I never bothered writing tests for something that will be brought to a playable/usable state and almost never updated again
+
+I could ask AI to do this for me, but AI tests are meaningless and they test nothing. Also, leaving regression tests would be a waste of time, I don't really intend on touching this ever again, unless breaking changes are pushed to osu!lazer.
+
+I playtested it enough for its intended purposes.
 
 ---
 
