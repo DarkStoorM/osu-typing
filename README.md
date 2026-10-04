@@ -30,6 +30,10 @@ _BPM_ dictates the difficulty, not the beatmap itself as its contents are replac
 
 _**Please**_ refer to [this TL;DR](ABOUT.md#a-tldr-on-how-to-play-this) on how to use it in-game.
 
+This repository was never meant to be published, because it's more of a personal project, so, it remains feature-frozen.
+
+**Do not treat this as a typing test game.**
+
 ---
 
 ## Building

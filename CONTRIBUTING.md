@@ -1,5 +1,8 @@
 # Contributing
 
+> [!Important]
+> Delete this file if you plan on forking this repository for your own purposes.
+
 This project is **feature-frozen** and is no longer under development.
 
 I originally created this ruleset primarily for my own use (mini typing tests inside osu!lazer). It has reached a state where I'm happy with it, and I don't have any plans to add new stuff, fix some small issues or continue developing it beyond what is necessary to keep it working with newer versions of osu!lazer (ruleset version changes).
@@ -10,7 +13,7 @@ Because of that:
 * **Feature requests will generally be closed as `Not Planned`.**
 * **Bug reports may be considered**, particularly if they identify a legitimate problem with the existing functionality. However, don't guarantee that bugs will be fixed.
 * Some issues may simply be documented (or just exist) as known problems or added to the project's TODO list rather than actively worked on.
-* If you want to change or extend the ruleset, **feel free to fork the repository** and make it your own.
+* If you want to change or extend the ruleset, **feel free to fork the repository** and make it your own, and **delete this file**.
 
 The repository being public is primarily intended to make the ruleset available to users and to allow others to inspect, build, and fork the code.
 
@@ -35,3 +38,5 @@ If you want to add features, change the gameplay, fix issues, maintain compatibi
 I have no expectation that derivative projects remain aligned with this repository, and you do not need my approval to continue development in your own fork.
 
 The project is released under the **MIT License**, so the permissions and requirements of that license apply.
+
+If you take this project further and develop under your own fork, please share your results and let me now, [tag me on Twitter](https://x.com/darkstoorm_) or something, *as long as it's not AI slop*.
