@@ -77,6 +77,9 @@ This ruleset is primarily made for `Words` mod, where you type random words from
 - Mod Selection shows the approximate `WPM` based on the most common BPM next to `Difficulty Attributes`
 - Adjust `Scroll Speed` with keybinds (F3-F4 by default) during the gameplay
 
+> [!Note]
+> You might want to skin the Leaderboard out. I never used it in lazer, so I don't know where it is positioned by default...
+
 ---
 
 ### Note on Letter Spacing
