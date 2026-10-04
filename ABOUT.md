@@ -43,7 +43,6 @@ This is not a technical README, but more of a thing that kind of reads like a bl
     - [Other Beatmap Attributes](#other-beatmap-attributes)
   - [Difficulty Calculator for Typing Ruleset](#difficulty-calculator-for-typing-ruleset)
   - [Keyboard layouts](#keyboard-layouts)
-  - [Sharing Disclaimer](#sharing-disclaimer)
   - [Key Timing Distribution](#key-timing-distribution)
   - [Skinnable Key Timing Distribution](#skinnable-key-timing-distribution)
   - [Custom Note Hit Sound](#custom-note-hit-sound)
@@ -642,14 +641,6 @@ Does it matter? Nope, it's not something that should be measure anyway. It's lik
 
 > [!Note]
 > All the difficulty calculations assume Touch-Typing. It's basically like Taiko assuming `full alt KDDK`, but `DDKK` playstyles getting free PP from 1/6.
-
----
-
-## Sharing Disclaimer
-
-I'm intentionally not sharing this (right now), because I made this for myself, but, if you happened to find this, I don't think you will have fun playing. I'm too lazy to write a better documentation for the rulesets/mods, or make it easier to use in general.
-
-Also, I won't be sharing this in the [Custom Ruleset Directory](https://github.com/ppy/osu/discussions/13096), I dont think it's worth posting something this unpolished and badly coded, especially given the nature of how this ruleset works, requiring a hack around the generation with a mod, which should never be the case.
 
 ---
 
