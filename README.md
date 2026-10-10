@@ -7,6 +7,7 @@
   - [Loading Into osu](#loading-into-osu)
   - [Full Ruleset Description](#full-ruleset-description)
   - [Project Status](#project-status)
+  - [Windows Smart App Control Issues](#windows-smart-app-control-issues)
 
 ---
 
@@ -78,3 +79,13 @@ I consider this ruleset complete for its intended purpose and will not be  activ
 Feel free to fork the project if you'd like to continue development
 
 For more information, please refer to the [CONTRIBUTING](CONTRIBUTING.md) document.
+
+---
+
+## Windows Smart App Control Issues
+
+osu! might start with an exception saying that there was a problem while loading the ruleset.
+
+Unfortunately, Windows `Smart App Control` might block the ruleset from loading immediately after launching osu!, because the `.dll` is unsigned. It depends if Microsoft's Reputation Service recognises the file as safe. The built and provided `.dll` might even be permanently blocked on some configurations. RIP I guess :shrug:
+
+Do not disable Smart App Control. It's there for a reason.
